@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tutorials, tips, and guides for converting spreadsheet data into PowerPoint presentations. Learn how to automate business reports with Merge It.">
+<meta name="keywords" content="Merge It tutorials, Excel to PowerPoint guide, spreadsheet automation, PPTX templates, report automation">
+<meta name="author" content="Man Singh Rana (TsGuideMan)">
+<meta name="application-name" content="Merge It">
+<title>Merge It - Blog &amp; Tutorials</title>
+<link rel="icon" type="image/png" href="../pics/marge-it-72.png">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/blog/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Merge It - Blog &amp; Tutorials">
+<meta property="og:description" content="Tutorials, tips, and guides for converting spreadsheet data into PowerPoint presentations.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/blog/">
+<link rel="stylesheet" href="../css/blog.css?v=2">
+<script>
+window.mergeItTheme = (function() {
+	var pref = 'default';
+	try { pref = localStorage.getItem('mergeit-theme') || 'default'; } catch (e) {}
+	var mq = window.matchMedia('(prefers-color-scheme: light)');
+	function resolve() { return pref === 'default' ? (mq.matches ? 'light' : 'dark') : pref; }
+	function apply() {
+		document.documentElement.setAttribute('data-theme', resolve());
+		var btns = document.querySelectorAll('[data-theme-btn]');
+		for (var i = 0; i < btns.length; i++)
+			btns[i].className = (btns[i].getAttribute('data-theme-btn') === pref) ? 'active' : '';
+	}
+	try { mq.addEventListener('change', function() { if (pref === 'default') apply(); }); } catch (e) {}
+	apply();
+	return { set: function(p) { pref = p; try { localStorage.setItem('mergeit-theme', p); } catch (e) {} apply(); }, apply: apply };
+})();
+document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply(); });
+</script>
+<script src="../js/i18n.js"></script>
+</head>
+<body>
+<div id="theme-bar"><span class="theme-label" data-i18n="theme.label">Theme:</span><button type="button" data-theme-btn="default" onclick="mergeItTheme.set('default')" data-i18n="theme.default">Default</button><button type="button" data-theme-btn="dark" onclick="mergeItTheme.set('dark')" data-i18n="theme.dark">Dark</button><button type="button" data-theme-btn="light" onclick="mergeItTheme.set('light')" data-i18n="theme.white">White</button></div>
+<div id="container">
+
+<nav class="blognav">
+<ul>
+<li><a href="../en/index.html">Home</a></li>
+<li><a href="../downloads/">Download</a></li>
+<li><a href="./" class="active">Blog</a></li>
+<li><a href="../en/privacy.html">Privacy</a></li>
+<li><a href="../en/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<h1>Blog &amp; Tutorials</h1>
+<p class="post-meta">Guides and tips for automating presentations with Merge It.</p>
+
+<div class="ad-slot"><!-- Ad slot: paste your own AdSense ad code here --></div>
+
+<p>Welcome to the Merge It blog. Here you will find step-by-step tutorials, practical tips, and best practices for turning spreadsheet data into PowerPoint presentations. Whether you are new to Merge It or looking for advanced techniques, these guides will help you work faster and smarter.</p>
+
+<h2>Latest Tutorials</h2>
+
+<div class="post-grid">
+
+	<article class="post-card">
+		<h3><a href="excel-to-powerpoint-step-by-step.html">How to Convert Excel to PowerPoint: A Step-by-Step Guide</a></h3>
+		<p>Learn how to convert Excel spreadsheet data into a PowerPoint presentation automatically. This beginner-friendly guide covers the full workflow from preparing your data to generating the final PPTX file.</p>
+		<div class="meta">Beginner &middot; 8 min read</div>
+		<div><span class="tag">Excel</span><span class="tag">PowerPoint</span><span class="tag">Tutorial</span></div>
+	</article>
+
+	<article class="post-card">
+		<h3><a href="merge-it-quick-start.html">Merge It Quick Start: Your First Presentation in 5 Minutes</a></h3>
+		<p>New to Merge It? Follow this quick start guide and generate your first automated presentation in under five minutes. Perfect for first-time users.</p>
+		<div class="meta">Beginner &middot; 5 min read</div>
+		<div><span class="tag">Getting Started</span><span class="tag">Merge It</span></div>
+	</article>
+
+	<article class="post-card">
+		<h3><a href="powerpoint-template-placeholders.html">How to Create a PowerPoint Template with Placeholders</a></h3>
+		<p>Placeholders like <code>{{Customer Name}}</code> are the heart of automated presentations. Learn how to design a reusable PowerPoint template that Merge It can fill with your spreadsheet data.</p>
+		<div class="meta">Intermediate &middot; 7 min read</div>
+		<div><span class="tag">Templates</span><span class="tag">Placeholders</span><span class="tag">PowerPoint</span></div>
+	</article>
+
+	<article class="post-card">
+		<h3><a href="csv-to-powerpoint.html">How to Convert CSV to PowerPoint Automatically</a></h3>
+		<p>CSV files are everywhere. Learn how to turn any CSV or TSV file into a set of PowerPoint presentations, one slide deck per row or a single combined deck.</p>
+		<div class="meta">Intermediate &middot; 6 min read</div>
+		<div><span class="tag">CSV</span><span class="tag">Automation</span></div>
+	</article>
+
+	<article class="post-card">
+		<h3><a href="business-report-automation.html">5 Ways to Automate Business Reports with PowerPoint</a></h3>
+		<p>Stop copying and pasting data into slides. Discover five practical ways to automate repetitive business reporting and save hours every week.</p>
+		<div class="meta">Intermediate &middot; 7 min read</div>
+		<div><span class="tag">Business</span><span class="tag">Automation</span><span class="tag">Productivity</span></div>
+	</article>
+
+	<article class="post-card">
+		<h3><a href="troubleshooting-common-issues.html">Merge It Troubleshooting: 8 Common Issues and Fixes</a></h3>
+		<p>Placeholders not replaced? Wrong rows selected? Slides looking odd? Here are the most common Merge It problems and how to fix them quickly.</p>
+		<div class="meta">Intermediate &middot; 6 min read</div>
+		<div><span class="tag">Troubleshooting</span><span class="tag">Fixes</span></div>
+	</article>
+
+</div>
+
+<h2>Why These Guides Matter</h2>
+<p>Most teams still build presentations by hand: opening a spreadsheet, copying a row, pasting it into a slide, and repeating the process dozens of times. It is slow, error-prone, and boring. Automation changes that. With the right template and a clean spreadsheet, a hundred presentations can be produced in seconds instead of hours.</p>
+<p>These tutorials focus on practical, repeatable workflows. You do not need to write code. You need a spreadsheet, a PowerPoint template, and a few minutes of setup.</p>
+
+<div class="cta">
+	<h3>Try Merge It Yourself</h3>
+	<p>Ready to put these guides into practice? Download Merge It and convert your first spreadsheet to PowerPoint today.</p>
+	<p><a href="../downloads/"><b>Download Merge It &rarr;</b></a></p>
+</div>
+
+<div class="footer">
+	Merge It &nbsp;&copy;&nbsp; 2026 &nbsp;-&nbsp; <a href="https://github.com/TsGuideMan/Merge-It">Source code</a> &nbsp;-&nbsp; <a href="../en/privacy.html">Privacy Policy</a> &nbsp;-&nbsp; <a href="../en/contact.html">Contact</a>
+</div>
+
+</div>
+</body>
+</html>

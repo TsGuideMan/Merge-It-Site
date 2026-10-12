@@ -1,0 +1,99 @@
+Merge It - Software Details
+
+About
+-----
+Merge It is an offline desktop application designed to convert spreadsheet data into PowerPoint presentations. It allows users to select an Excel/CSV data file and a PPTX template, map sheet columns to placeholders such as {{Customer Name}}, and generate one PPTX per row or one combined presentation for all rows.
+
+The app is built for quick business reporting, document automation, and repetitive presentation generation without requiring an internet connection. The current project is a local Electron-based desktop app and is targeted at Windows users.
+
+Download
+--------
+Download options:
+- Download the packaged Windows installer from the project's GitHub Releases page when available.
+- Or run the app directly from source using the project folder and the following steps:
+  1. Open the project folder.
+  2. Run: npm install
+  3. Run: npm start
+- A desktop shortcut installer script is also included in the project folder:
+  - install_desktop_app.bat
+  - start_desktop_app.bat
+
+Changelog
+---------
+Version 1.2.0
+- Initial release update for the local desktop app workflow.
+- Added spreadsheet and template selection workflow.
+- Added row-based and all-row PowerPoint generation modes.
+- Improved desktop window and install experience.
+- Added local app packaging support for Windows.
+
+Usage
+-----
+1. Prepare a spreadsheet file (.xlsx, .xls, .csv, etc.) with headers.
+2. Prepare a PowerPoint template (.pptx) containing placeholders like {{Customer Name}}.
+3. Open the Merge It application.
+4. Choose the spreadsheet data file and the PowerPoint template.
+5. Select the worksheet and set the row range.
+6. Set the output name and choose the generation mode:
+   - One PPTX per row
+   - One PPTX for all rows
+7. Click the generate action to create the output presentation files.
+8. Save the generated file(s) to your preferred location.
+
+Tips:
+- Placeholders must match the exact column headers in the spreadsheet.
+- Use one text run for each placeholder in the PowerPoint template.
+- Start row should normally be 2 if the first row contains headers.
+
+FAQ
+---
+Q: Does this app require internet access?
+A: No. It is designed as an offline local desktop application.
+
+Q: What file types are supported?
+A: Excel formats (.xlsx, .xls, .xlsm, .xlsb, .ods, etc.) and CSV/TSV files are supported for data input. PowerPoint templates must be .pptx.
+
+Q: Can I generate multiple slides or multiple files?
+A: Yes. You can generate either a separate PPTX for each row or a single PPTX for all rows.
+
+Q: Do the placeholders need to match the spreadsheet headers exactly?
+A: Yes. The placeholder text should match the column name exactly, including spelling and case behavior expected by the template.
+
+Q: Is the source code public?
+A: Yes. The source code is available from the repository below.
+
+Developer Information
+---------------------
+- Developer: Man Singh Rana (TsGuideMan)
+- Location: Nepal
+- Status: Looking for a Full-time / Remote Software Engineer position
+- GitHub profile: https://github.com/TsGuideMan
+- Facebook: https://www.facebook.com/tsguideman
+- YouTube: https://www.youtube.com/@TSGuideMan
+- Contact: Via GitHub issues on the project repository
+- Development stack: JavaScript / HTML / CSS, Electron, Tailwind CSS
+- Other projects by this developer:
+  - Merge-It: https://github.com/TsGuideMan/Merge-It (Spreadsheet to PowerPoint desktop app)
+  - nepaliclock: https://github.com/TsGuideMan/nepaliclock (Python)
+  - resultsys: https://github.com/TsGuideMan/resultsys (JavaScript)
+  - schoolsewa: https://github.com/TsGuideMan/schoolsewa (PHP)
+  - School-Result-Sewa: https://github.com/TsGuideMan/School-Result-Sewa (JavaScript)
+
+Source Code
+-----------
+Project repository:
+https://github.com/TsGuideMan/Merge-It
+
+Local project folder:
+E:\margeitpro update
+
+Repository details:
+- Name: Merge-It
+- Type: Electron desktop app for spreadsheet-to-PowerPoint reporting
+- Language: JavaScript / HTML / CSS
+- License: MIT
+
+For local development:
+- npm install
+- npm start
+- npm run build

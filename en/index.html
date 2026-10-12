@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head profile="http://www.w3.org/2005/10/profile">
+<meta charset='utf-8'>
+<meta name="description" content="Merge It is an offline desktop app that converts spreadsheet data into PowerPoint presentations using Excel/CSV inputs and PPTX templates.">
+<meta name="keywords" content="Merge It, spreadsheet to PowerPoint, report automation, Excel to PPTX, presentation template, desktop app, Electron, Windows">
+<meta name="author" content="Man Singh Rana (TsGuideMan)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="application-name" content="Merge It">
+<meta name="msapplication-square70x70logo" content="../pics/marge-it-72.png">
+<meta name="msapplication-square150x150logo" content="../pics/marge-it-150.png">
+<meta name="msapplication-wide310x150logo" content="../pics/marge-it-150.png">
+<meta name="msapplication-square310x310logo" content="../pics/marge-it-256.png">
+<meta name="msapplication-TileColor" content="#3f4555">
+<title>Merge It - Spreadsheet to PowerPoint Desktop App</title>
+    <link rel="icon" type="image/png" href="../pics/marge-it-72.png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Merge It - Spreadsheet to PowerPoint Desktop App">
+    <meta property="og:description" content="Convert spreadsheet data into PowerPoint presentations offline with Merge It.">
+    <meta property="og:image" content="../pics/marge-it-256.png">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script>
+function setCookie(name, value, days) {
+	var expires = "";
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+		expires = "; expires=" + date.toUTCString();
+	}
+	document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+function getCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for (var i = 0; i < ca.length; i++) {
+		var c = ca[i];
+		while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+	}
+	return "";
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+	var notice = document.getElementById('cookie-notice');
+	if (notice && getCookie('display_cookie_notice') != 'no')
+		notice.style.display = 'block';
+});
+</script>
+<!-- Add your own analytics code here -->
+<style type="text/css">
+	* {	--bs-body-line-height: 1.2;	scroll-behavior: smooth; }
+	body { background: linear-gradient(180deg, #0b1020 0%, #141d2b 100%); font-family: Helvetica, Arial, FreeSans, san-serif !important; color: #edf2ff; padding-top: 56px; }
+	#container { margin: 0 auto; width: 760px; overflow: auto; }
+	#notice { border: 4px solid #ffa520; color: white; padding: 1em; width: 94%; margin-left: auto; margin-right: auto; }
+	.menu { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; margin: 0; padding: 8px 0; background: rgba(11, 16, 32, 0.95); border-bottom: 1px solid rgba(148, 163, 184, 0.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+	.menu ul { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; list-style: none; margin: 0 auto; padding: 0; gap: 4px; max-width: 760px; }
+	.menu a { margin: 0 2px; text-decoration: none; color: #cbd5e1; font-size: 15px; font-weight: bold; padding: 6px 10px; border-radius: 8px; transition: 0.3s all; display: inline-block; }
+	.menu a:hover { color: #7dd3fc; background: rgba(125, 211, 252, 0.1); transition: 0.3s all; }
+	.menu a.active { color: #0b1020; background: #7dd3fc; }
+	.menu ul li { margin: 0; }
+	.generic_section { width: 100%; align-items: center; }
+	#top_banner { padding-top: 12px; }
+	table.reference { color: #000030; background-color: white; border: 1px solid #c3c3c3; border-collapse: collapse; width: 100%; }
+	table.reference th { background-color: #e5eecc;	border: 1px solid #c3c3c3; padding: 3px; vertical-align: top; }
+	table.reference td { border: 1px solid #c3c3c3;	padding: 3px; vertical-align: top; }
+	th.title { background-color: #80e090 }
+	td.item { color: #444444; background-color: #e8e8e8; }
+	td.item a { color: #0a58ca; }
+	td.item a:hover { color: fuchsia; }
+	td.item a:visited { color: purple; }
+	li { line-height: 1.3em; }
+	h1, h2, h3, h4 { font-weight: bold; }
+	h1 { font-size: 3.8em; color: #c0baaa; margin-bottom: 3px; margin-top: 10px; }
+	h1 .small { font-size: 0.4em; }
+	h1 a { text-decoration: none; }
+	h2 { padding: 12px; font-size: 1.5em; color: #c0baaa; line-height: 1.3em; border: 2px solid #706a6a; margin-top: 40px; margin-bottom: 20px; }
+	h3 { text-align: center; color: #c0baaa; }
+	h4 { font-size: 1.0em; margin-top: 24px; margin-bottom: 10px; }
+	a { color: #c0baaa; }
+	a:hover { transition: 1s all; }
+	.cookie-notification { background: #fffbe4; border-color: #f8f6e6; overflow: hidden; }
+	.tagline { font-size: 1.6em; margin-bottom: 18px; margin-top: 24px; font-style: italic; color: #dbeafe; }
+	.download { float: right; }
+	#top_banner h1 a { color: #f8fafc; }
+	#top_banner h1 a:hover { color: #7dd3fc; }
+	section.generic_section p, section.generic_section li { color: #f8fafc; }
+	section.generic_section h2 { color: #7dd3fc; border-color: rgba(125, 211, 252, 0.5); }
+	section.generic_section h3 { color: #f8fafc; }
+	section.generic_section code { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(125, 211, 252, 0.35); border-radius: 5px; color: #7dd3fc; padding: 2px 6px; }
+	pre { background: black; color: white; padding: 15px; margin-top: 15px; }
+	code { display: inline-block; padding: 3px 3px 4px 1px; color: #ececec; font-family: monospace, monospace; line-height: 10px; font-size: 16px; vertical-align: middle; }
+	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa; }
+	.kbd { display: inline-block; padding: 3px 5px; font-family: monospace, monospace; font-size: 11px; line-height: 10px; color: #555; vertical-align: middle; background-color: #fcfcfc; border: solid 1px #ccc; border-bottom-color: #bbb; border-radius: 3px; box-shadow: inset 0 -1px 0 #bbb; }
+	.footer { font-size: 0.9em; text-align:center; padding-top: 30px; font-style: italic; }
+	.treeView{ -moz-user-select: none; position: relative; }
+	.treeView ul { margin: 0 0 0 -1.5em; padding: 0 0 0 1.5em; }
+	.treeView li { margin: 0; padding: 0; list-style-position: inside; list-style-image: none; cursor: auto; }
+	.treeView li li { padding-left: 1.5em; }
+	@media screen and ( max-width: 1002px; ) { .hide_on_small_screens { display: none; } }
+	.carousel-indicators { bottom: -45px; }
+	.carousel-indicators li { width: 10px; height: 10px; border-radius: 100%; }
+	/* ---- Theme support (Default = follow system, Dark, White) ---- */
+	html[data-theme="light"] body { background: linear-gradient(180deg, #f5f7fb 0%, #e7ecf5 100%); color: #1f2937; }
+	html[data-theme="light"] h1 { color: #111827; }
+	html[data-theme="light"] #top_banner h1 span { color: #111827 !important; }
+	html[data-theme="light"] h2 { color: #0369a1; border-color: rgba(3, 105, 161, 0.4); }
+	html[data-theme="light"] h3 { color: #0f172a; }
+	html[data-theme="light"] a { color: #0369a1; }
+	html[data-theme="light"] code { color: #0369a1; }
+	html[data-theme="light"] pre { background: #1e293b; color: #f8fafc; }
+	html[data-theme="light"] .footer { color: #475569; }
+	html[data-theme="light"] #top_banner h1 a { color: #0f172a; }
+	html[data-theme="light"] .tagline { color: #0c4a6e; }
+	html[data-theme="light"] .menu { background: rgba(255, 255, 255, 0.95); border-bottom-color: rgba(15, 23, 42, 0.12); }
+	html[data-theme="light"] .menu a { color: #334155; }
+	html[data-theme="light"] .menu a:hover { background: rgba(3, 105, 161, 0.1); color: #0369a1; }
+	html[data-theme="light"] .menu a.active { background: #0369a1; color: #fff; }
+	html[data-theme="light"] section.generic_section p, html[data-theme="light"] section.generic_section li { color: #111827; }
+	html[data-theme="light"] section.generic_section h2 { color: #0369a1; border-color: rgba(3, 105, 161, 0.4); }
+	html[data-theme="light"] section.generic_section h3 { color: #0f172a; }
+	html[data-theme="light"] section.generic_section code { background: #eef2ff; border-color: rgba(3, 105, 161, 0.3); color: #0369a1; }
+	/* Language switcher (reference-style, built-in translation) */
+	#lang-switcher { position: fixed; bottom: 12px; left: 12px; z-index: 10000; }
+	#lang-switcher select { border-radius: 6px; border: 1px solid rgba(125, 211, 252, 0.5); background: rgba(15, 23, 42, 0.9); color: #e2e8f0; padding: 4px 6px; font-size: 13px; }
+	html[data-theme="light"] #lang-switcher select { background: #fff; border-color: rgba(3, 105, 161, 0.4); color: #111827; }
+	/* Theme switcher */
+	#theme-bar { position: fixed; bottom: 12px; right: 12px; z-index: 10000; display: flex; gap: 4px; align-items: center; background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 999px; padding: 5px 10px; font-size: 12px; color: #cbd5e1; }
+	#theme-bar .theme-label { font-weight: bold; margin-right: 2px; }
+	#theme-bar button { border: 1px solid transparent; background: transparent; color: #cbd5e1; border-radius: 999px; padding: 2px 9px; cursor: pointer; font-size: 12px; }
+	#theme-bar button.active { background: #7dd3fc; color: #0b1020; font-weight: bold; }
+	html[data-theme="light"] #theme-bar { background: rgba(255, 255, 255, 0.95); border-color: rgba(15, 23, 42, 0.15); color: #334155; }
+	html[data-theme="light"] #theme-bar button { color: #334155; }
+	html[data-theme="light"] #theme-bar button.active { background: #0369a1; color: #fff; }
+</style>
+<script>
+window.mergeItTheme = (function() {
+	var pref = 'default';
+	try { pref = localStorage.getItem('mergeit-theme') || 'default'; } catch (e) {}
+	var mq = window.matchMedia('(prefers-color-scheme: light)');
+	function resolve() { return pref === 'default' ? (mq.matches ? 'light' : 'dark') : pref; }
+	function apply() {
+		document.documentElement.setAttribute('data-theme', resolve());
+		var btns = document.querySelectorAll('[data-theme-btn]');
+		for (var i = 0; i < btns.length; i++)
+			btns[i].className = (btns[i].getAttribute('data-theme-btn') === pref) ? 'active' : '';
+	}
+	try { mq.addEventListener('change', function() { if (pref === 'default') apply(); }); } catch (e) {}
+	apply();
+	return { set: function(p) { pref = p; try { localStorage.setItem('mergeit-theme', p); } catch (e) {} apply(); }, apply: apply };
+})();
+document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply(); });
+</script>
+<script src="../js/i18n.js"></script>
+</head>
+
+<body>
+<div id="lang-switcher"><select id="lang_select" aria-label="Change language"></select></div>
+<div id="theme-bar"><span class="theme-label" data-i18n="theme.label">Theme:</span><button type="button" data-theme-btn="default" onclick="mergeItTheme.set('default')" data-i18n="theme.default">Default</button><button type="button" data-theme-btn="dark" onclick="mergeItTheme.set('dark')" data-i18n="theme.dark">Dark</button><button type="button" data-theme-btn="light" onclick="mergeItTheme.set('light')" data-i18n="theme.white">White</button></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+<div id="container">
+	<section class="generic_section" id="ad1">
+		<!-- Ad slot: paste your own AdSense ad code here -->
+	</section>
+	<section class="generic_section" id="menu">
+		<nav class="menu" id="Menu"><ul>
+			<li><a href="index.html" class="active" data-i18n="nav.home">Home</a></li>
+			<li><a href="../downloads/" data-i18n="nav.download">Download</a></li>
+			<li><a href="../blog/" data-i18n="nav.blog">Blog</a></li>
+			<li><a href="privacy.html" data-i18n="nav.privacy">Privacy</a></li>
+			<li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+		</ul></nav>
+	</section>
+	<section class="generic_section" id="top_banner">
+		<h1><img border="0" src="../pics/marge-it-128.png" srcset="../pics/marge-it-128.png 1x, ../pics/marge-it-256.png 2x" alt="[Merge It icon]"/>
+		<span style="color:#f8fafc;" data-i18n="app.name">Merge It</span></h1>
+		<div class="tagline"><center data-i18n="app.tagline">Convert spreadsheet data into PowerPoint presentations offline</center></div>
+		<div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
+			<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="../pics/screenshot1_en.png" class="d-block" alt="Merge It screenshot" style="height: 600px; margin: auto;">
+			</div>
+			</div>
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true"></button>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden" data-i18n="carousel.prev">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden" data-i18n="carousel.next">Next</span>
+			</button>
+		</div>
+		<p>&nbsp;</p>
+	</section>
+	<section class="generic_section" id="about">
+		<p data-i18n="about.p1">Merge It is an offline desktop application designed to convert spreadsheet data into PowerPoint presentations.</p>
+		<p data-i18n="about.p2">It allows users to select an Excel/CSV data file and a PPTX template, map sheet columns to placeholders such as <code>{{Customer Name}}</code>, and generate one PPTX per row or one combined presentation for all rows.</p>
+		<p data-i18n="about.p3">The app is built for quick business reporting, document automation, and repetitive presentation generation without requiring an internet connection.</p>
+		<p data-i18n="about.p4">The current project is a local Electron-based desktop app and is targeted at Windows users.</p>
+		<h3 data-i18n="about.features">Key features of Merge It</h3>
+		<ul>
+			<li data-i18n="about.f1">Converts spreadsheet data into polished business presentation files.</li>
+			<li data-i18n="about.f2">Supports Excel and CSV input with header-based column mapping.</li>
+			<li data-i18n="about.f3">Works with PowerPoint templates using placeholder text such as <code>{{Customer Name}}</code>.</li>
+			<li data-i18n="about.f4">Lets you generate either a separate PPTX file per row or one combined presentation for all rows.</li>
+			<li data-i18n="about.f5">Runs locally as an offline desktop workflow for reliable, repeatable document generation.</li>
+		</ul>
+	</section>
+	<section class="generic_section" id="download">
+		<h2 style="border: 4px solid #a09a8a;"><span style="font-size: 133%" data-i18n="download.title">Download</span></h2>
+		<p><b data-i18n="download.versions">Available software versions:</b></p>
+		<ul>
+			<li data-i18n="download.v100">Merge It Setup 1.0.0.exe</li>
+			<li data-i18n="download.v110">Merge It Setup 1.1.0.exe</li>
+			<li data-i18n="download.v120">Merge It Setup 1.2.0.exe</li>
+		</ul>
+		<p data-i18n="download.note">These setup files are provided for direct installation and use on Windows systems.</p>
+		<p><a href="../downloads/"><b data-i18n="download.browse">Browse all downloads &rarr;</b></a></p>
+		<h4 data-i18n="download.sysreq">System requirements:</h4>
+		<p data-i18n="download.sysreq.detail">Windows desktop app; local Electron-based workflow designed for Windows users.</p>
+	</section>
+	<section class="generic_section" id="usage">
+		<h2 data-i18n="usage.title">Usage</h2>
+		<ol>
+			<li data-i18n="usage.s1">Prepare a spreadsheet file (.xlsx, .xls, .csv, etc.) with headers.</li>
+			<li data-i18n="usage.s2">Prepare a PowerPoint template (.pptx) containing placeholders like <code>{{Customer Name}}</code>.</li>
+			<li data-i18n="usage.s3">Open the Merge It application.</li>
+			<li data-i18n="usage.s4">Choose the spreadsheet data file and the PowerPoint template.</li>
+			<li data-i18n="usage.s5">Select the worksheet and set the row range.</li>
+			<li data-i18n="usage.s6">Set the output name and choose the generation mode:
+				<ul>
+					<li data-i18n="usage.mode1">One PPTX per row</li>
+					<li data-i18n="usage.mode2">One PPTX for all rows</li>
+				</ul>
+			</li>
+			<li data-i18n="usage.s7">Click the generate action to create the output presentation files.</li>
+			<li data-i18n="usage.s8">Save the generated file(s) to your preferred location.</li>
+		</ol>
+		<p><b data-i18n="usage.tips">Tips:</b></p>
+		<ul>
+			<li data-i18n="usage.tip1">Placeholders must match the exact column headers in the spreadsheet.</li>
+			<li data-i18n="usage.tip2">Use one text run for each placeholder in the PowerPoint template.</li>
+			<li data-i18n="usage.tip3">Start row should normally be 2 if the first row contains headers.</li>
+		</ul>
+	</section>
+	<section class="generic_section" id="ad2">
+		<!-- In-content ad slot: paste your own AdSense ad code here -->
+	</section>
+	<section class="generic_section" id="FAQ">
+		<h2 data-i18n="faq.title">Frequently Asked Questions (FAQ)</h2>
+		<p><strong data-i18n="faq.q1">Q: Does this app require internet access?</strong><br/>
+		<span data-i18n="faq.a1">A: No. It is designed as an offline local desktop application.</span></p>
+		<p><strong data-i18n="faq.q2">Q: What file types are supported?</strong><br/>
+		<span data-i18n="faq.a2">A: Excel formats (.xlsx, .xls, .xlsm, .xlsb, .ods, etc.) and CSV/TSV files are supported for data input. PowerPoint templates must be .pptx.</span></p>
+		<p><strong data-i18n="faq.q3">Q: Can I generate multiple slides or multiple files?</strong><br/>
+		<span data-i18n="faq.a3">A: Yes. You can generate either a separate PPTX for each row or a single PPTX for all rows.</span></p>
+		<p><strong data-i18n="faq.q4">Q: Do the placeholders need to match the spreadsheet headers exactly?</strong><br/>
+		<span data-i18n="faq.a4">A: Yes. The placeholder text should match the column name exactly, including spelling and case behavior expected by the template.</span></p>
+		<p><strong data-i18n="faq.q5">Q: Is the source code public?</strong><br/>
+		<span data-i18n="faq.a5">A: Yes. The source code is available from the repository below.</span></p>
+	</section>
+	<section class="generic_section" id="license">
+		<h2 data-i18n="license.title">License</h2>
+		<p data-i18n="license.text">Merge It is released under the <a target="_blank" href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+	</section>
+	<section class="generic_section" id="changelog">
+		<h2 data-i18n="changelog.title">Changelog</h2>
+		<ul dir="ltr">
+			<li><b data-i18n="changelog.v">Version 1.2.0</b>
+				<ul dir="ltr">
+					<li data-i18n="changelog.c1">Initial release update for the local desktop app workflow.</li>
+					<li data-i18n="changelog.c2">Added spreadsheet and template selection workflow.</li>
+					<li data-i18n="changelog.c3">Added row-based and all-row PowerPoint generation modes.</li>
+					<li data-i18n="changelog.c4">Improved desktop window and install experience.</li>
+					<li data-i18n="changelog.c5">Added local app packaging support for Windows.</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<section class="generic_section" id="source">
+		<h2 data-i18n="source.title">Source Code</h2>
+		<ul>
+			<li><a target="_blank" href="https://github.com/TsGuideMan/Merge-It" data-i18n="source.repo">Project repository</a></li>
+			<li data-i18n="source.local">Local project folder: <code>E:\margeitpro update</code></li>
+			<li data-i18n="source.details">Repository details:
+				<ul>
+					<li data-i18n="source.name">Name: Merge-It</li>
+					<li data-i18n="source.type">Type: Electron desktop app for spreadsheet-to-PowerPoint reporting</li>
+					<li data-i18n="source.lang">Language: JavaScript / HTML / CSS</li>
+					<li data-i18n="source.license">License: MIT</li>
+				</ul>
+			</li>
+			<li data-i18n="source.dev">For local development:
+				<pre dir="ltr">npm install
+npm start
+npm run build</pre>
+			</li>
+		</ul>
+	</section>
+	<section class="generic_section" id="developer">
+		<h2 data-i18n="dev.title">Developer Information</h2>
+		<ul>
+			<li data-i18n="dev.name"><b>Developer:</b> Man Singh Rana (TsGuideMan)</li>
+			<li data-i18n="dev.location"><b>Location:</b> Nepal</li>
+			<li data-i18n="dev.status"><b>Status:</b> Looking for a Full-time / Remote Software Engineer position</li>
+			<li data-i18n="dev.github"><b>GitHub profile:</b> <a target="_blank" href="https://github.com/TsGuideMan">github.com/TsGuideMan</a></li>
+			<li data-i18n="dev.facebook"><b>Facebook:</b> <a target="_blank" href="https://www.facebook.com/tsguideman">tsguideman</a></li>
+			<li data-i18n="dev.youtube"><b>YouTube:</b> <a target="_blank" href="https://www.youtube.com/@TSGuideMan">@TSGuideMan</a></li>
+			<li data-i18n="dev.contact"><b>Contact:</b> Via GitHub issues on the project repository</li>
+			<li data-i18n="dev.stack"><b>Development stack:</b> JavaScript / HTML / CSS, Electron, Tailwind CSS</li>
+			<li data-i18n="dev.other"><b>Other projects by this developer:</b>
+				<ul dir="ltr">
+					<li data-i18n="dev.o1"><a target="_blank" href="https://github.com/TsGuideMan/Merge-It">Merge-It</a> &ndash; Spreadsheet to PowerPoint desktop app</li>
+					<li data-i18n="dev.o2"><a target="_blank" href="https://github.com/TsGuideMan/nepaliclock">nepaliclock</a> &ndash; Python</li>
+					<li data-i18n="dev.o3"><a target="_blank" href="https://github.com/TsGuideMan/resultsys">resultsys</a> &ndash; JavaScript</li>
+					<li data-i18n="dev.o4"><a target="_blank" href="https://github.com/TsGuideMan/schoolsewa">schoolsewa</a> &ndash; PHP</li>
+					<li data-i18n="dev.o5"><a target="_blank" href="https://github.com/TsGuideMan/School-Result-Sewa">School-Result-Sewa</a> &ndash; JavaScript</li>
+				</ul>
+			</li>
+		</ul>
+	</section>
+	<div class="footer"><table align="center" dir="ltr" cellspacing="0" cellpadding="0" border="0"><tr>
+		<td data-i18n="app.name">Merge It</td><td>&nbsp;&copy;&nbsp;</td><td data-i18n="footer.year">2026</td></tr></table>
+		<p><a href="privacy.html" data-i18n="footer.privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="contact.html" data-i18n="footer.contact">Contact</a></p>
+		</div>
+	</div>
+</body>
+</html>

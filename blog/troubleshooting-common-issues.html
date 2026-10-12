@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Placeholders not replaced? Wrong rows selected? Slides looking odd? Here are the most common Merge It problems and how to fix them quickly.">
+<meta name="keywords" content="Merge It troubleshooting, placeholder not replaced, PowerPoint automation fix, common issues">
+<meta name="author" content="Man Singh Rana (TsGuideMan)">
+<title>Merge It Troubleshooting: 8 Common Issues and Fixes</title>
+<link rel="icon" type="image/png" href="../pics/marge-it-72.png">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/blog/troubleshooting-common-issues.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merge It Troubleshooting: 8 Common Issues and Fixes">
+<meta property="og:description" content="Solve the most common Merge It placeholder and layout problems quickly.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/blog/troubleshooting-common-issues.html">
+<link rel="stylesheet" href="../css/blog.css?v=2">
+<script>window.mergeItTheme=(function(){var pref='default';try{pref=localStorage.getItem('mergeit-theme')||'default';}catch(e){}var mq=window.matchMedia('(prefers-color-scheme: light)');function resolve(){return pref==='default'?(mq.matches?'light':'dark'):pref;}function apply(){document.documentElement.setAttribute('data-theme',resolve());var btns=document.querySelectorAll('[data-theme-btn]');for(var i=0;i<btns.length;i++)btns[i].className=(btns[i].getAttribute('data-theme-btn')===pref)?'active':'';}try{mq.addEventListener('change',function(){if(pref==='default')apply();});}catch(e){}apply();return{set:function(p){pref=p;try{localStorage.setItem('mergeit-theme',p);}catch(e){}apply();},apply:apply};})();document.addEventListener('DOMContentLoaded',function(){mergeItTheme.apply();});</script>
+<script src="../js/i18n.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Merge It Troubleshooting: 8 Common Issues and Fixes","description":"Solve the most common Merge It placeholder and layout problems quickly.","author":{"@type":"Person","name":"Man Singh Rana"},"datePublished":"2026-06-18","dateModified":"2026-10-11","publisher":{"@type":"Organization","name":"Merge It"}}
+</script>
+</head>
+<body>
+<div id="theme-bar"><span class="theme-label" data-i18n="theme.label">Theme:</span><button type="button" data-theme-btn="default" onclick="mergeItTheme.set('default')" data-i18n="theme.default">Default</button><button type="button" data-theme-btn="dark" onclick="mergeItTheme.set('dark')" data-i18n="theme.dark">Dark</button><button type="button" data-theme-btn="light" onclick="mergeItTheme.set('light')" data-i18n="theme.white">White</button></div>
+<div id="container">
+
+<p class="breadcrumb"><a href="./">Blog</a> &rsaquo; Troubleshooting Guide</p>
+
+<nav class="blognav">
+<ul>
+<li><a href="../en/index.html">Home</a></li>
+<li><a href="../downloads/">Download</a></li>
+<li><a href="./" class="active">Blog</a></li>
+<li><a href="../en/privacy.html">Privacy</a></li>
+<li><a href="../en/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<h1>Merge It Troubleshooting: 8 Common Issues and Fixes</h1>
+<p class="post-meta">Published on June 18, 2026 &middot; Updated on October 11, 2026 &middot; 6 min read &middot; By <a href="../en/contact.html">Man Singh Rana</a></p>
+
+<div class="ad-slot"><!-- Ad slot: paste your own AdSense ad code here --></div>
+
+<p>Most Merge It problems come from a small set of causes. This guide covers the eight issues you are most likely to hit, with a clear fix for each one.</p>
+
+<div class="toc">
+<h4>On this page</h4>
+<ol>
+<li><a href="#issue-1">1. Placeholder text is not replaced</a></li>
+<li><a href="#issue-2">2. The header row appears as a slide</a></li>
+<li><a href="#issue-3">3. Only some placeholders are replaced</a></li>
+<li><a href="#issue-4">4. Wrong or missing rows</a></li>
+<li><a href="#issue-5">5. Text overflows the slide</a></li>
+<li><a href="#issue-6">6. Special characters appear garbled</a></li>
+<li><a href="#issue-7">7. The app cannot read the file</a></li>
+<li><a href="#issue-8">8. The output folder is empty</a></li>
+</ol>
+</div>
+
+<h2 id="issue-1">1. Placeholder Text Is Not Replaced</h2>
+<p><b>Symptom:</b> Your generated slides still show <code>{{Customer Name}}</code> instead of the actual value.</p>
+<p><b>Cause:</b> The placeholder text does not exactly match the spreadsheet column header.</p>
+<p><b>Fix:</b> Compare the placeholder and the header character by character. Check for:</p>
+<ul>
+<li>Different capitalization, such as <code>customer name</code> versus <code>Customer Name</code></li>
+<li>Extra spaces before or after the text</li>
+<li>Underscores versus spaces, such as <code>Customer_Name</code></li>
+<li>Curly braces that are actually smart quotes</li>
+</ul>
+<p>The safest approach is to copy the header text from the spreadsheet and paste it into the placeholder.</p>
+
+<h2 id="issue-2">2. The Header Row Appears as a Slide</h2>
+<p><b>Symptom:</b> One of your slides contains column names instead of data.</p>
+<p><b>Cause:</b> The row range starts at row 1 instead of row 2.</p>
+<p><b>Fix:</b> Set the start row to 2 whenever your first row contains headers. This is the most common first-run mistake.</p>
+
+<h2 id="issue-3">3. Only Some Placeholders Are Replaced</h2>
+<p><b>Symptom:</b> Some placeholders work, others remain unchanged.</p>
+<p><b>Cause:</b> Usually a text run issue, or a genuine mismatch in the header names.</p>
+<p><b>Fix:</b> In PowerPoint, check the affected placeholder. If other text shares the same text run with the placeholder, split them. Then verify that the header name matches exactly.</p>
+
+<h2 id="issue-4">4. Wrong or Missing Rows</h2>
+<p><b>Symptom:</b> Some rows were skipped, or unexpected rows appeared.</p>
+<p><b>Cause:</b> Blank rows in the middle of the data, or an incorrect end row setting.</p>
+<p><b>Fix:</b> Clean the spreadsheet before converting:</p>
+<ul>
+<li>Delete completely empty rows</li>
+<li>Check that the end row matches your last data row</li>
+<li>Watch for hidden filter rows that look empty but are not</li>
+</ul>
+
+<h2 id="issue-5">5. Text Overflows the Slide</h2>
+<p><b>Symptom:</b> Long values run off the edge of the slide or overlap other elements.</p>
+<p><b>Cause:</b> The template text box was sized for short sample values.</p>
+<p><b>Fix:</b> Resize the text box in the template and reduce the font size slightly. Test with your longest values before running a full batch. Avoid PowerPoint's autofit setting because it behaves inconsistently.</p>
+
+<h2 id="issue-6">6. Special Characters Appear Garbled</h2>
+<p><b>Symptom:</b> Names with accents, umlauts, or non-Latin characters look wrong in the output.</p>
+<p><b>Cause:</b> The spreadsheet was not saved as UTF-8, or the font does not support the characters.</p>
+<p><b>Fix:</b> Re-export the data file as UTF-8. Then choose a font in your template that supports the characters you need.</p>
+
+<h2 id="issue-7">7. The App Cannot Read the File</h2>
+<p><b>Symptom:</b> Merge It reports an error or shows no worksheets when you select a file.</p>
+<p><b>Cause:</b> An unsupported format, a password-protected file, or a file still open and locked in another program.</p>
+<p><b>Fix:</b> Close the file in Excel or PowerPoint, remove any password protection, and confirm the format is supported. Supported data formats include <code>.xlsx</code>, <code>.xls</code>, <code>.xlsm</code>, <code>.xlsb</code>, <code>.ods</code>, <code>.csv</code>, and <code>.tsv</code>. Templates must be <code>.pptx</code>.</p>
+
+<h2 id="issue-8">8. The Output Folder Is Empty</h2>
+<p><b>Symptom:</b> The generation completes but no files appear where you expected.</p>
+<p><b>Cause:</b> The output path was not set correctly, or the row range produced no data rows.</p>
+<p><b>Fix:</b> Check the output name and destination folder. Confirm the row range includes at least one data row. If the start row is greater than the end row, nothing is generated.</p>
+
+<h2>Still Stuck?</h2>
+<p>If none of these fixes solve your problem, report it on the <a target="_blank" href="https://github.com/TsGuideMan/Merge-It/issues">GitHub issues page</a>. Please include:</p>
+<ul>
+<li>Your Windows version</li>
+<li>The Merge It version you are using</li>
+<li>Steps to reproduce the problem</li>
+<li>A screenshot or the exact error message, if available</li>
+</ul>
+<p>We aim to respond to issues within a few days.</p>
+
+<div class="cta">
+<h3>Download the Latest Version</h3>
+<p>Many issues are fixed in newer releases. Download the latest version of Merge It and try again.</p>
+<p><a href="../downloads/"><b>Download Merge It &rarr;</b></a></p>
+</div>
+
+<div class="related">
+<h2>Related Tutorials</h2>
+<ul>
+<li><a href="merge-it-quick-start.html">Merge It Quick Start: Your First Presentation in 5 Minutes</a><span class="desc">New to Merge It? Start here for a guided walkthrough.</span></li>
+<li><a href="powerpoint-template-placeholders.html">How to Create a PowerPoint Template with Placeholders</a><span class="desc">Build templates that avoid these problems from the start.</span></li>
+<li><a href="excel-to-powerpoint-step-by-step.html">How to Convert Excel to PowerPoint: A Step-by-Step Guide</a><span class="desc">The full beginner workflow explained in detail.</span></li>
+</ul>
+</div>
+
+<div class="footer">
+	Merge It &nbsp;&copy;&nbsp; 2026 &nbsp;-&nbsp; <a href="https://github.com/TsGuideMan/Merge-It">Source code</a> &nbsp;-&nbsp; <a href="../en/privacy.html">Privacy Policy</a> &nbsp;-&nbsp; <a href="../en/contact.html">Contact</a>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Placeholders like Customer Name are the heart of automated presentations. Learn how to design a reusable PowerPoint template that Merge It can fill.">
+<meta name="keywords" content="PowerPoint template placeholders, {{Customer Name}}, reusable template, merge fields">
+<meta name="author" content="Man Singh Rana (TsGuideMan)">
+<title>How to Create a PowerPoint Template with Placeholders</title>
+<link rel="icon" type="image/png" href="../pics/marge-it-72.png">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/blog/powerpoint-template-placeholders.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Create a PowerPoint Template with Placeholders">
+<meta property="og:description" content="Learn how to design a reusable PowerPoint template that Merge It can fill with your spreadsheet data.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/blog/powerpoint-template-placeholders.html">
+<link rel="stylesheet" href="../css/blog.css?v=2">
+<script>window.mergeItTheme=(function(){var pref='default';try{pref=localStorage.getItem('mergeit-theme')||'default';}catch(e){}var mq=window.matchMedia('(prefers-color-scheme: light)');function resolve(){return pref==='default'?(mq.matches?'light':'dark'):pref;}function apply(){document.documentElement.setAttribute('data-theme',resolve());var btns=document.querySelectorAll('[data-theme-btn]');for(var i=0;i<btns.length;i++)btns[i].className=(btns[i].getAttribute('data-theme-btn')===pref)?'active':'';}try{mq.addEventListener('change',function(){if(pref==='default')apply();});}catch(e){}apply();return{set:function(p){pref=p;try{localStorage.setItem('mergeit-theme',p);}catch(e){}apply();},apply:apply};})();document.addEventListener('DOMContentLoaded',function(){mergeItTheme.apply();});</script>
+<script src="../js/i18n.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"How to Create a PowerPoint Template with Placeholders","description":"Learn how to design a reusable PowerPoint template that Merge It can fill with your spreadsheet data.","author":{"@type":"Person","name":"Man Singh Rana"},"datePublished":"2026-03-05","dateModified":"2026-10-11","publisher":{"@type":"Organization","name":"Merge It"}}
+</script>
+</head>
+<body>
+<div id="theme-bar"><span class="theme-label" data-i18n="theme.label">Theme:</span><button type="button" data-theme-btn="default" onclick="mergeItTheme.set('default')" data-i18n="theme.default">Default</button><button type="button" data-theme-btn="dark" onclick="mergeItTheme.set('dark')" data-i18n="theme.dark">Dark</button><button type="button" data-theme-btn="light" onclick="mergeItTheme.set('light')" data-i18n="theme.white">White</button></div>
+<div id="container">
+
+<p class="breadcrumb"><a href="./">Blog</a> &rsaquo; PowerPoint Template Placeholders</p>
+
+<nav class="blognav">
+<ul>
+<li><a href="../en/index.html">Home</a></li>
+<li><a href="../downloads/">Download</a></li>
+<li><a href="./" class="active">Blog</a></li>
+<li><a href="../en/privacy.html">Privacy</a></li>
+<li><a href="../en/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<h1>How to Create a PowerPoint Template with Placeholders</h1>
+<p class="post-meta">Published on March 5, 2026 &middot; Updated on October 11, 2026 &middot; 7 min read &middot; By <a href="../en/contact.html">Man Singh Rana</a></p>
+
+<div class="ad-slot"><!-- Ad slot: paste your own AdSense ad code here --></div>
+
+<p>A well-built template is the single most important part of an automated presentation workflow. Get the template right, and generating a hundred presentations is trivial. Get it wrong, and you will fight with broken output every time.</p>
+
+<div class="toc">
+<h4>On this page</h4>
+<ol>
+<li><a href="#what">What is a placeholder</a></li>
+<li><a href="#anatomy">Anatomy of a good template</a></li>
+<li><a href="#build">Building a template step by step</a></li>
+<li><a href="#rules">Placeholder rules that matter</a></li>
+<li><a href="#patterns">Three useful template patterns</a></li>
+<li><a href="#avoid">Mistakes to avoid</a></li>
+</ol>
+</div>
+
+<h2 id="what">What Is a Placeholder?</h2>
+<p>A placeholder is a piece of text in your PowerPoint template that stands in for a value coming from your spreadsheet. It is written with double curly braces around a column name:</p>
+
+<pre><code>{{Customer Name}}</code></pre>
+
+<p>When the conversion runs, every occurrence of <code>{{Customer Name}}</code> is replaced with the value from the <code>Customer Name</code> column of the current spreadsheet row.</p>
+
+<h2 id="anatomy">Anatomy of a Good Template</h2>
+<p>A template normally contains three kinds of content:</p>
+
+<table class="info">
+<tr><th>Content type</th><th>Example</th><th>Changes per row?</th></tr>
+<tr><td><b>Static labels</b></td><td><code>Customer:</code>, <code>Amount:</code></td><td>No</td></tr>
+<tr><td><b>Placeholders</b></td><td><code>{{Customer Name}}</code>, <code>{{Amount}}</code></td><td>Yes</td></tr>
+<tr><td><b>Design elements</b></td><td>Logos, colors, backgrounds</td><td>No</td></tr>
+</table>
+
+<p>The key insight is that only placeholders change. Everything else stays the same on every slide, which is what makes the template reusable.</p>
+
+<h2 id="build">Building a Template Step by Step</h2>
+
+<h3>Step 1: Design the slide visually first</h3>
+<p>Start with a normal presentation. Put real-looking sample values in place so you can see the layout, spacing, and font sizes before you add any placeholders.</p>
+
+<h3>Step 2: Replace sample values with placeholders</h3>
+<p>Now replace each sample value with the matching placeholder. For example, replace <code>Amit Sharma</code> with <code>{{Customer Name}}</code>.</p>
+
+<h3>Step 3: Match placeholder names to column headers</h3>
+<p>Open your spreadsheet and copy the exact header text. Pasting is safer than typing because it avoids subtle differences in spacing or capitalization.</p>
+
+<h3>Step 4: Test with a single row</h3>
+<p>Generate one presentation using the first data row only. Check every slide carefully before running the full batch.</p>
+
+<h2 id="rules">Placeholder Rules That Matter</h2>
+
+<div class="toc">
+<h4>Four rules to remember</h4>
+<ol>
+<li><b>Exact match.</b> <code>Customer Name</code> and <code>Customer_Name</code> are different keys. Whitespace and capitalization both matter.</li>
+<li><b>One text run per placeholder.</b> Keep each placeholder in its own run of text. Avoid combining it with other words in the same run.</li>
+<li><b>Unique names.</b> Do not use the same placeholder twice for different meanings.</li>
+<li><b>No nested braces.</b> Write <code>{{Name}}</code>, not <code>{{{{Name}}}}</code>.</li>
+</ol>
+</div>
+
+<h2 id="patterns">Three Useful Template Patterns</h2>
+
+<h3>Pattern 1: Single report slide</h3>
+<p>One slide per row, containing the main fields. Best for individual client reports.</p>
+
+<pre><code>{{Customer Name}}
+{{Company}}
+{{Amount}}
+{{Date}}</code></pre>
+
+<h3>Pattern 2: Title and detail slides</h3>
+<p>Two slides per row: a title slide with the name, then a detail slide with the full data. Duplicate the slide pair for each row in the template, or generate per row and combine.</p>
+
+<h3>Pattern 3: Certificate or letter</h3>
+<p>A formal layout with a single name field, a date, and a description. Popular for certificates, awards, and invitations.</p>
+
+<h2 id="avoid">Mistakes to Avoid</h2>
+<ul>
+<li><b>Placeholders inside images.</b> Text baked into an image cannot be replaced. Keep placeholders in real text boxes.</li>
+<li><b>Overlapping text boxes.</b> Long values can overflow. Give text boxes room to grow.</li>
+<li><b>Fancy auto-fit settings.</b> PowerPoint's autofit can behave unpredictably. Set font sizes manually.</li>
+<li><b>Mixed placeholder styles.</b> Pick one convention, such as <code>{{Field Name}}</code>, and use it everywhere.</li>
+<li><b>Testing only with short values.</b> Try a long name and a long company name to make sure the layout still holds.</li>
+</ul>
+
+<div class="cta">
+<h3>Build Your First Template Today</h3>
+<p>Download Merge It and turn your template into hundreds of presentations automatically.</p>
+<p><a href="../downloads/"><b>Download Merge It &rarr;</b></a></p>
+</div>
+
+<div class="related">
+<h2>Related Tutorials</h2>
+<ul>
+<li><a href="excel-to-powerpoint-step-by-step.html">How to Convert Excel to PowerPoint: A Step-by-Step Guide</a><span class="desc">The full beginner workflow explained in detail.</span></li>
+<li><a href="troubleshooting-common-issues.html">Merge It Troubleshooting: 8 Common Issues and Fixes</a><span class="desc">Solve the most frequent placeholder and layout problems.</span></li>
+<li><a href="business-report-automation.html">5 Ways to Automate Business Reports with PowerPoint</a><span class="desc">Put your templates to work in real business scenarios.</span></li>
+</ul>
+</div>
+
+<div class="footer">
+	Merge It &nbsp;&copy;&nbsp; 2026 &nbsp;-&nbsp; <a href="https://github.com/TsGuideMan/Merge-It">Source code</a> &nbsp;-&nbsp; <a href="../en/privacy.html">Privacy Policy</a> &nbsp;-&nbsp; <a href="../en/contact.html">Contact</a>
+</div>
+
+</div>
+</body>
+</html>

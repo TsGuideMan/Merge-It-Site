@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="New to Merge It? Follow this quick start guide and generate your first automated PowerPoint presentation in under five minutes.">
+<meta name="keywords" content="Merge It quick start, Merge It tutorial, first presentation, getting started">
+<meta name="author" content="Man Singh Rana (TsGuideMan)">
+<title>Merge It Quick Start: Your First Presentation in 5 Minutes</title>
+<link rel="icon" type="image/png" href="../pics/marge-it-72.png">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/blog/merge-it-quick-start.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merge It Quick Start: Your First Presentation in 5 Minutes">
+<meta property="og:description" content="New to Merge It? Follow this quick start guide and generate your first automated presentation in under five minutes.">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/blog/merge-it-quick-start.html">
+<link rel="stylesheet" href="../css/blog.css?v=2">
+<script>window.mergeItTheme=(function(){var pref='default';try{pref=localStorage.getItem('mergeit-theme')||'default';}catch(e){}var mq=window.matchMedia('(prefers-color-scheme: light)');function resolve(){return pref==='default'?(mq.matches?'light':'dark'):pref;}function apply(){document.documentElement.setAttribute('data-theme',resolve());var btns=document.querySelectorAll('[data-theme-btn]');for(var i=0;i<btns.length;i++)btns[i].className=(btns[i].getAttribute('data-theme-btn')===pref)?'active':'';}try{mq.addEventListener('change',function(){if(pref==='default')apply();});}catch(e){}apply();return{set:function(p){pref=p;try{localStorage.setItem('mergeit-theme',p);}catch(e){}apply();},apply:apply};})();document.addEventListener('DOMContentLoaded',function(){mergeItTheme.apply();});</script>
+<script src="../js/i18n.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Merge It Quick Start: Your First Presentation in 5 Minutes","description":"New to Merge It? Follow this quick start guide and generate your first automated presentation in under five minutes.","author":{"@type":"Person","name":"Man Singh Rana"},"datePublished":"2026-02-10","dateModified":"2026-10-11","publisher":{"@type":"Organization","name":"Merge It"}}
+</script>
+</head>
+<body>
+<div id="theme-bar"><span class="theme-label" data-i18n="theme.label">Theme:</span><button type="button" data-theme-btn="default" onclick="mergeItTheme.set('default')" data-i18n="theme.default">Default</button><button type="button" data-theme-btn="dark" onclick="mergeItTheme.set('dark')" data-i18n="theme.dark">Dark</button><button type="button" data-theme-btn="light" onclick="mergeItTheme.set('light')" data-i18n="theme.white">White</button></div>
+<div id="container">
+
+<p class="breadcrumb"><a href="./">Blog</a> &rsaquo; Merge It Quick Start</p>
+
+<nav class="blognav">
+<ul>
+<li><a href="../en/index.html">Home</a></li>
+<li><a href="../downloads/">Download</a></li>
+<li><a href="./" class="active">Blog</a></li>
+<li><a href="../en/privacy.html">Privacy</a></li>
+<li><a href="../en/contact.html">Contact</a></li>
+</ul>
+</nav>
+
+<h1>Merge It Quick Start: Your First Presentation in 5 Minutes</h1>
+<p class="post-meta">Published on February 10, 2026 &middot; Updated on October 11, 2026 &middot; 5 min read &middot; By <a href="../en/contact.html">Man Singh Rana</a></p>
+
+<div class="ad-slot"><!-- Ad slot: paste your own AdSense ad code here --></div>
+
+<p>This guide walks you through generating your very first automated PowerPoint presentation with Merge It. By the end, you will understand the whole workflow and be able to repeat it for any spreadsheet.</p>
+
+<div class="toc">
+<h4>On this page</h4>
+<ol>
+<li><a href="#install">Install Merge It</a></li>
+<li><a href="#sample">Prepare a sample spreadsheet</a></li>
+<li><a href="#template">Prepare a sample template</a></li>
+<li><a href="#run">Run the conversion</a></li>
+<li><a href="#result">Check the result</a></li>
+<li><a href="#next">What to do next</a></li>
+</ol>
+</div>
+
+<h2 id="install">Step 1: Install Merge It</h2>
+<p>Download the Windows installer from the <a href="../downloads/">downloads page</a> and run it. Alternatively, you can run the app directly from source:</p>
+
+<pre><code>git clone https://github.com/TsGuideMan/Merge-It.git
+cd Merge-It
+npm install
+npm start</code></pre>
+
+<p>Merge It runs entirely offline on your computer. It does not require an account, a login, or an internet connection.</p>
+
+<h2 id="sample">Step 2: Prepare a Sample Spreadsheet</h2>
+<p>Create a simple Excel file or CSV file with a header row and a few data rows. For this example, use four columns:</p>
+
+<pre><code>| Customer Name | Company      | Amount  |
+|---------------|--------------|---------|
+| Amit Sharma   | Kathmandu Co | 1250.00 |
+| Sita Gurung   | Pokhara Ltd  | 890.50  |
+| Ramesh Thapa  | Lalitpur Inc | 2100.00 |</code></pre>
+
+<p>Save it as <code>customers.xlsx</code> or <code>customers.csv</code>. The header names matter because they must match your template placeholders exactly.</p>
+
+<h2 id="template">Step 3: Prepare a Sample Template</h2>
+<p>Open PowerPoint and create a simple slide like this:</p>
+
+<pre><code>Customer: {{Customer Name}}
+Company:  {{Company}}
+Amount:   {{Amount}}</code></pre>
+
+<p>Save the file as <code>template.pptx</code>. Every placeholder is written with double curly braces and matches a column header from your spreadsheet.</p>
+
+<h2 id="run">Step 4: Run the Conversion</h2>
+<ol>
+<li>Open the Merge It application.</li>
+<li>Choose your spreadsheet data file and your PowerPoint template.</li>
+<li>Select the worksheet and set the row range. For our sample, start at row 2 (skipping the header).</li>
+<li>Set the output name, for example <code>Customer Reports</code>.</li>
+<li>Choose the generation mode. For this example, select <b>One PPTX per row</b>.</li>
+<li>Click the generate action.</li>
+</ol>
+
+<p>The app reads your spreadsheet, finds every placeholder in your template, and produces one presentation per row.</p>
+
+<h2 id="result">Step 5: Check the Result</h2>
+<p>Open the output folder. You should see three files, one for each data row, with the placeholders correctly replaced:</p>
+
+<pre><code>Customer: Amit Sharma
+Company:  Kathmandu Co
+Amount:   1250.00</code></pre>
+
+<p>If any placeholder was not replaced, it usually means the placeholder text did not exactly match the column header. Check spelling and capitalization, then try again.</p>
+
+<div class="toc">
+<h4>Common first-run mistakes</h4>
+<ol>
+<li>Starting at row 1 instead of row 2, which turns the header row into a slide.</li>
+<li>Placeholder text that does not match the column header exactly.</li>
+<li>Multiple placeholders placed in the same text run.</li>
+</ol>
+</div>
+
+<h2 id="next">What to Do Next</h2>
+<p>Now that you understand the basic workflow, you can move on to more advanced topics:</p>
+<ul>
+<li>Build a polished, reusable template with <a href="powerpoint-template-placeholders.html">placeholders and layouts</a>.</li>
+<li>Convert CSV exports from other tools with the <a href="csv-to-powerpoint.html">CSV to PowerPoint guide</a>.</li>
+<li>Fix common problems with the <a href="troubleshooting-common-issues.html">troubleshooting guide</a>.</li>
+<li>Learn broader reporting ideas in <a href="business-report-automation.html">business report automation</a>.</li>
+</ul>
+
+<div class="cta">
+<h3>Ready to Try It?</h3>
+<p>Download Merge It and generate your first presentation today. It is free, offline, and runs on Windows 10 or later.</p>
+<p><a href="../downloads/"><b>Download Merge It &rarr;</b></a></p>
+</div>
+
+<div class="related">
+<h2>Related Tutorials</h2>
+<ul>
+<li><a href="excel-to-powerpoint-step-by-step.html">How to Convert Excel to PowerPoint: A Step-by-Step Guide</a><span class="desc">The full beginner workflow explained in detail.</span></li>
+<li><a href="powerpoint-template-placeholders.html">How to Create a PowerPoint Template with Placeholders</a><span class="desc">Design templates that automation tools fill correctly.</span></li>
+<li><a href="troubleshooting-common-issues.html">Merge It Troubleshooting: 8 Common Issues and Fixes</a><span class="desc">Solve the most frequent problems quickly.</span></li>
+</ul>
+</div>
+
+<div class="footer">
+	Merge It &nbsp;&copy;&nbsp; 2026 &nbsp;-&nbsp; <a href="https://github.com/TsGuideMan/Merge-It">Source code</a> &nbsp;-&nbsp; <a href="../en/privacy.html">Privacy Policy</a> &nbsp;-&nbsp; <a href="../en/contact.html">Contact</a>
+</div>
+
+</div>
+</body>
+</html>
