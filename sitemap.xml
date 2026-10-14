@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- NOTE: replace YOUR-DOMAIN.example with your real domain after deploying -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://YOUR-DOMAIN.example/</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/en/index.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/en/privacy.html</loc><changefreq>yearly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/en/contact.html</loc><changefreq>yearly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/downloads/</loc><changefreq>weekly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/</loc><changefreq>weekly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/excel-to-powerpoint-step-by-step.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/merge-it-quick-start.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/powerpoint-template-placeholders.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/csv-to-powerpoint.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/business-report-automation.html</loc><changefreq>monthly</changefreq></url>
-<url><loc>https://YOUR-DOMAIN.example/blog/troubleshooting-common-issues.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/en/index.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/en/privacy.html</loc><changefreq>yearly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/en/contact.html</loc><changefreq>yearly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/downloads/</loc><changefreq>weekly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/</loc><changefreq>weekly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/excel-to-powerpoint-step-by-step.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/merge-it-quick-start.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/powerpoint-template-placeholders.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/csv-to-powerpoint.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/business-report-automation.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/blog/troubleshooting-common-issues.html</loc><changefreq>monthly</changefreq></url>
 </urlset>

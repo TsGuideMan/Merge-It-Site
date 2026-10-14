@@ -24,6 +24,11 @@ code { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(125, 211, 252, 
 .badge { display: inline-block; background: #166534; color: #bbf7d0; border-radius: 999px; padding: 2px 10px; font-size: 0.8em; margin-left: 8px; vertical-align: middle; }
 .footer { font-size: 0.9em; text-align: center; padding-top: 30px; font-style: italic; }
 .footer a { color: #cbd5e1; }
+.dl-btn { display: inline-block; background: linear-gradient(180deg, #4f8cff, #3867d6); color: #fff !important; font-weight: bold; padding: 14px 28px; border-radius: 10px; text-decoration: none; box-shadow: 0 8px 20px rgba(79, 140, 255, 0.3); font-size: 1.15em; }
+.dl-btn:hover { filter: brightness(1.06); }
+.dl-meta { font-size: 0.9em; color: #94a3b8; }
+html[data-theme="light"] .dl-meta { color: #475569; }
+html[data-theme="light"] .dl-btn { color: #fff !important; }
 /* ---- Theme support (Default = follow system, Dark, White) ---- */
 html[data-theme="light"] body { background: linear-gradient(180deg, #f5f7fb 0%, #e7ecf5 100%); color: #1f2937; }
 html[data-theme="light"] p, html[data-theme="light"] li { color: #111827; }
@@ -94,17 +99,17 @@ document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply();
 <!-- Ad slot: paste your own AdSense ad code here -->
 <p>Merge It is an offline desktop application for Windows that converts spreadsheet data into PowerPoint presentations using Excel/CSV inputs and PPTX templates.</p>
 
+<h2>Download for Windows</h2>
+<p style="margin: 16px 0;"><a class="dl-btn" href="https://github.com/TsGuideMan/Merge-It-Site/releases/download/v1.2.0/MergeIt-Setup-1.2.0.exe">&#11015; Download Merge It 1.2.0 (.exe)</a></p>
+<p class="dl-meta">File: <code>MergeIt-Setup-1.2.0.exe</code> &middot; 64-bit &middot; Windows 10 or later &middot; works fully offline after installation.</p>
+
 <h2>Available versions</h2>
 <ul class="download-list">
-<li><b>Merge It Setup 1.2.0.exe</b><span class="badge">Latest</span><br/>
-Includes spreadsheet and template selection workflow, row-based and all-row PowerPoint generation modes, and local app packaging support for Windows.</li>
-<li><b>Merge It Setup 1.1.0.exe</b><br/>
-Previous release with improved desktop window and install experience.</li>
-<li><b>Merge It Setup 1.0.0.exe</b><br/>
-Initial release of the local desktop app workflow.</li>
+<li><b>Merge It 1.2.0</b><span class="badge">Latest</span><br/>
+Includes spreadsheet and template selection workflow, row-based and all-row PowerPoint generation modes, and local app packaging support for Windows.<br/>
+<a href="https://github.com/TsGuideMan/Merge-It-Site/releases/download/v1.2.0/MergeIt-Setup-1.2.0.exe">Download MergeIt-Setup-1.2.0.exe</a></li>
 </ul>
-<p>Setup files are provided for direct installation and use on Windows systems.</p>
-<p><b>Note:</b> Published releases will be available on the <a target="_blank" href="https://github.com/TsGuideMan/Merge-It/releases">Merge-It GitHub Releases page</a>.</p>
+<p>Setup files are provided for direct installation and use on Windows systems. Older releases are listed on the <a target="_blank" href="https://github.com/TsGuideMan/Merge-It-Site/releases">Merge It Releases page</a>.</p>
 
 <h2>System requirements</h2>
 <ul>

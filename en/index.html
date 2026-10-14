@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 <!-- Add your own analytics code here -->
 <style type="text/css">
 	* {	--bs-body-line-height: 1.2;	scroll-behavior: smooth; }
-	body { background: linear-gradient(180deg, #0b1020 0%, #141d2b 100%); font-family: Helvetica, Arial, FreeSans, san-serif !important; color: #edf2ff; padding-top: 56px; }
+	body { background: linear-gradient(180deg, #0b1020 0%, #141d2b 100%); font-family: Helvetica, Arial, FreeSans, sans-serif !important; color: #edf2ff; padding-top: 56px; }
 	#container { margin: 0 auto; width: 760px; overflow: auto; }
 	#notice { border: 4px solid #ffa520; color: white; padding: 1em; width: 94%; margin-left: auto; margin-right: auto; }
 	.menu { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; margin: 0; padding: 8px 0; background: rgba(11, 16, 32, 0.95); border-bottom: 1px solid rgba(148, 163, 184, 0.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	.cookie-notification { background: #fffbe4; border-color: #f8f6e6; overflow: hidden; }
 	.tagline { font-size: 1.6em; margin-bottom: 18px; margin-top: 24px; font-style: italic; color: #dbeafe; }
 	.download { float: right; }
+	.dl-btn { display: inline-block; background: linear-gradient(180deg, #4f8cff, #3867d6); color: #fff !important; font-weight: bold; padding: 12px 24px; border-radius: 10px; text-decoration: none; box-shadow: 0 8px 20px rgba(79, 140, 255, 0.3); font-size: 1.1em; }
+	.dl-btn:hover { filter: brightness(1.06); transition: 0.3s all; }
 	#top_banner h1 a { color: #f8fafc; }
 	#top_banner h1 a:hover { color: #7dd3fc; }
 	section.generic_section p, section.generic_section li { color: #f8fafc; }
@@ -97,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	.treeView ul { margin: 0 0 0 -1.5em; padding: 0 0 0 1.5em; }
 	.treeView li { margin: 0; padding: 0; list-style-position: inside; list-style-image: none; cursor: auto; }
 	.treeView li li { padding-left: 1.5em; }
-	@media screen and ( max-width: 1002px; ) { .hide_on_small_screens { display: none; } }
+	@media screen and (max-width: 1002px) { .hide_on_small_screens { display: none; } }
 	.carousel-indicators { bottom: -45px; }
 	.carousel-indicators li { width: 10px; height: 10px; border-radius: 100%; }
 	/* ---- Theme support (Default = follow system, Dark, White) ---- */
@@ -211,11 +213,10 @@ document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply();
 	</section>
 	<section class="generic_section" id="download">
 		<h2 style="border: 4px solid #a09a8a;"><span style="font-size: 133%" data-i18n="download.title">Download</span></h2>
+		<p style="margin: 16px 0;"><a class="dl-btn" href="https://github.com/TsGuideMan/Merge-It-Site/releases/download/v1.2.0/MergeIt-Setup-1.2.0.exe" data-i18n="download.win">Download for Windows</a></p>
 		<p><b data-i18n="download.versions">Available software versions:</b></p>
 		<ul>
-			<li data-i18n="download.v100">Merge It Setup 1.0.0.exe</li>
-			<li data-i18n="download.v110">Merge It Setup 1.1.0.exe</li>
-			<li data-i18n="download.v120">Merge It Setup 1.2.0.exe</li>
+			<li><a href="https://github.com/TsGuideMan/Merge-It-Site/releases/download/v1.2.0/MergeIt-Setup-1.2.0.exe" data-i18n="download.v120">Merge It Setup 1.2.0.exe</a> <span data-i18n="download.latest">(latest)</span></li>
 		</ul>
 		<p data-i18n="download.note">These setup files are provided for direct installation and use on Windows systems.</p>
 		<p><a href="../downloads/"><b data-i18n="download.browse">Browse all downloads &rarr;</b></a></p>
@@ -284,7 +285,6 @@ document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply();
 		<h2 data-i18n="source.title">Source Code</h2>
 		<ul>
 			<li><a target="_blank" href="https://github.com/TsGuideMan/Merge-It" data-i18n="source.repo">Project repository</a></li>
-			<li data-i18n="source.local">Local project folder: <code>E:\margeitpro update</code></li>
 			<li data-i18n="source.details">Repository details:
 				<ul>
 					<li data-i18n="source.name">Name: Merge-It</li>
