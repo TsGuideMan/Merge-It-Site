@@ -150,6 +150,9 @@
 
 		"changelog.title": "Changelog",
 		"changelog.v": "Version 1.2.0",
+		"changelog.v130": "Version 1.3.0",
+		"changelog.m1": "Added an MSI installer option for Windows.",
+		"changelog.m2": "The standard .exe setup installer is also provided.",
 		"changelog.c1": "Initial release update for the local desktop app workflow.",
 		"changelog.c2": "Added spreadsheet and template selection workflow.",
 		"changelog.c3": "Added row-based and all-row PowerPoint generation modes.",
@@ -342,6 +345,9 @@
 
 		"changelog.title": "चेन्जलग",
 		"changelog.v": "संस्करण १.२.०",
+		"changelog.v130": "संस्करण १.३.०",
+		"changelog.m1": "Windows का लागि MSI इन्स्टलर विकल्प थपियो।",
+		"changelog.m2": "मानक .exe सेटअप इन्स्टलर पनि उपलब्ध छ।",
 		"changelog.c1": "स्थानीय डेस्कटप एप वर्कफ्लोका लागि सुरुवाती रिलिज अपडेट।",
 		"changelog.c2": "स्प्रेडशीट र टेम्पलेट छनोट वर्कफ्लो थपियो।",
 		"changelog.c3": "पङ्क्ति-आधारित र सबै-पङ्क्ति PowerPoint उत्पादन मोडहरू थपियो।",
@@ -534,6 +540,9 @@
 
 		"changelog.title": "चेंजलॉग",
 		"changelog.v": "संस्करण 1.2.0",
+		"changelog.v130": "संस्करण 1.3.0",
+		"changelog.m1": "Windows के लिए MSI इंस्टॉलर विकल्प जोड़ा गया।",
+		"changelog.m2": "मानक .exe सेटअप इंस्टॉलर भी प्रदान किया गया है।",
 		"changelog.c1": "स्थानीय डेस्कटॉप ऐप वर्कफ़्लो के लिए प्रारंभिक रिलीज़ अपडेट।",
 		"changelog.c2": "स्प्रेडशीट और टेम्पलेट चयन वर्कफ़्लो जोड़ा गया।",
 		"changelog.c3": "रो-आधारित और ऑल-रो PowerPoint जनरेशन मोड जोड़े गए।",
@@ -726,6 +735,9 @@
 
 		"changelog.title": "更新日志",
 		"changelog.v": "版本 1.2.0",
+		"changelog.v130": "版本 1.3.0",
+		"changelog.m1": "添加了 Windows 的 MSI 安装程序选项。",
+		"changelog.m2": "同时提供标准 .exe 安装程序。",
 		"changelog.c1": "本地桌面应用工作流的初始发布更新。",
 		"changelog.c2": "添加了电子表格和模板选择工作流。",
 		"changelog.c3": "添加了基于行和所有行的 PowerPoint 生成模式。",
@@ -918,6 +930,9 @@
 
 		"changelog.title": "سجل التغييرات",
 		"changelog.v": "الإصدار 1.2.0",
+		"changelog.v130": "الإصدار 1.3.0",
+		"changelog.m1": "أُضيف خيار مثبّت MSI لنظام Windows.",
+		"changelog.m2": "يتوفّر أيضًا مثبّت الإعداد .exe القياسي.",
 		"changelog.c1": "تحديث الإصدار الأول لسير عمل تطبيق سطح المكتب المحلي.",
 		"changelog.c2": "أُضيف سير عمل اختيار جدول البيانات والقالب.",
 		"changelog.c3": "أُضيفت أوضاع إنشاء PowerPoint حسب الصف ولجميع الصفوف.",
@@ -1110,6 +1125,9 @@
 
 		"changelog.title": "Registro de cambios",
 		"changelog.v": "Versión 1.2.0",
+		"changelog.v130": "Versión 1.3.0",
+		"changelog.m1": "Se agregó una opción de instalador MSI para Windows.",
+		"changelog.m2": "También se proporciona el instalador de configuración .exe estándar.",
 		"changelog.c1": "Actualización inicial de la versión del flujo de trabajo de la aplicación de escritorio local.",
 		"changelog.c2": "Se agregó el flujo de selección de hoja de cálculo y plantilla.",
 		"changelog.c3": "Se agregaron modos de generación de PowerPoint por fila y para todas las filas.",
@@ -1302,6 +1320,9 @@
 
 		"changelog.title": "Journal des modifications",
 		"changelog.v": "Version 1.2.0",
+		"changelog.v130": "Version 1.3.0",
+		"changelog.m1": "Ajout d'une option d'installateur MSI pour Windows.",
+		"changelog.m2": "L'installateur d'installation .exe standard est également fourni.",
 		"changelog.c1": "Mise à jour initiale de la version du flux de travail de l'application de bureau locale.",
 		"changelog.c2": "Ajout du flux de sélection de tableur et de modèle.",
 		"changelog.c3": "Ajout des modes de génération PowerPoint par ligne et pour toutes les lignes.",
