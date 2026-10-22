@@ -49,9 +49,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 </script>
 <!-- Add your own analytics code here -->
 <style type="text/css">
-	* {	--bs-body-line-height: 1.2;	scroll-behavior: smooth; }
-	body { background: linear-gradient(180deg, #0b1020 0%, #141d2b 100%); font-family: Helvetica, Arial, FreeSans, sans-serif !important; color: #edf2ff; padding-top: 56px; }
-	#container { margin: 0 auto; width: 760px; overflow: auto; }
+	* {
+		--bs-body-line-height: 1.2;
+		scroll-behavior: smooth;
+		box-sizing: border-box;
+	}
+	body {
+		background: linear-gradient(180deg, #0b1020 0%, #141d2b 100%);
+		font-family: Helvetica, Arial, FreeSans, sans-serif !important;
+		color: #edf2ff;
+		padding-top: 56px;
+		margin: 0;
+	}
+	#container {
+		margin: 0 auto;
+		width: 760px;
+		overflow: auto;
+	}
 	#notice { border: 4px solid #ffa520; color: white; padding: 1em; width: 94%; margin-left: auto; margin-right: auto; }
 	.menu { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; margin: 0; padding: 8px 0; background: rgba(11, 16, 32, 0.95); border-bottom: 1px solid rgba(148, 163, 184, 0.25); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 	.menu ul { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; list-style: none; margin: 0 auto; padding: 0; gap: 4px; max-width: 760px; }
@@ -61,6 +75,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	.menu ul li { margin: 0; }
 	.generic_section { width: 100%; align-items: center; }
 	#top_banner { padding-top: 12px; }
+	#top_banner h1 { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+	#top_banner h1 img { display: block; }
+	#carousel { max-width: 100%; margin: 0 auto; }
+	#carousel img {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		height: auto;
+		max-height: min(600px, calc(100vh - 180px));
+		max-height: min(600px, calc(100svh - 180px));
+		margin: 0 auto;
+		object-fit: contain;
+	}
 	table.reference { color: #000030; background-color: white; border: 1px solid #c3c3c3; border-collapse: collapse; width: 100%; }
 	table.reference th { background-color: #e5eecc;	border: 1px solid #c3c3c3; padding: 3px; vertical-align: top; }
 	table.reference td { border: 1px solid #c3c3c3;	padding: 3px; vertical-align: top; }
@@ -69,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	td.item a { color: #0a58ca; }
 	td.item a:hover { color: fuchsia; }
 	td.item a:visited { color: purple; }
-	li { line-height: 1.3em; }
+	li { line-height: 1.45em; }
 	h1, h2, h3, h4 { font-weight: bold; }
 	h1 { font-size: 3.8em; color: #c0baaa; margin-bottom: 3px; margin-top: 10px; }
 	h1 .small { font-size: 0.4em; }
@@ -90,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	section.generic_section h2 { color: #7dd3fc; border-color: rgba(125, 211, 252, 0.5); }
 	section.generic_section h3 { color: #f8fafc; }
 	section.generic_section code { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(125, 211, 252, 0.35); border-radius: 5px; color: #7dd3fc; padding: 2px 6px; }
-	pre { background: black; color: white; padding: 15px; margin-top: 15px; }
+	pre { background: black; color: white; padding: 15px; margin-top: 15px; border-radius: 16px; overflow-x: auto; }
 	code { display: inline-block; padding: 3px 3px 4px 1px; color: #ececec; font-family: monospace, monospace; line-height: 10px; font-size: 16px; vertical-align: middle; }
 	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa; }
 	.kbd { display: inline-block; padding: 3px 5px; font-family: monospace, monospace; font-size: 11px; line-height: 10px; color: #555; vertical-align: middle; background-color: #fcfcfc; border: solid 1px #ccc; border-bottom-color: #bbb; border-radius: 3px; box-shadow: inset 0 -1px 0 #bbb; }
@@ -102,6 +129,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	@media screen and (max-width: 1002px) { .hide_on_small_screens { display: none; } }
 	.carousel-indicators { bottom: -45px; }
 	.carousel-indicators li { width: 10px; height: 10px; border-radius: 100%; }
+	@media (max-width: 780px) {
+		#container { width: 92vw; }
+		.menu ul { max-width: 92vw; padding: 0 6px; }
+		.menu a { font-size: 13px; padding: 7px 9px; }
+		#download p:first-of-type { display: flex; flex-direction: column; gap: 12px; }
+		.dl-btn { width: 100%; }
+		#download a[style*="margin-left"] { margin-left: 0 !important; }
+	}
+	@media (max-width: 520px) {
+		body { padding-top: 80px; }
+		#container { width: 92vw; }
+		.menu { padding: 10px 0 6px; }
+		.menu ul { gap: 6px; }
+		.menu a { width: auto; text-align: center; padding: 6px 8px; }
+		h1 { font-size: 2.2rem; }
+		h2 { font-size: 1.2rem; }
+		.tagline { font-size: 1.1rem; margin-top: 12px; }
+		#top_banner h1 img { width: 64px; height: 64px; }
+		#download .dl-btn, #download a { display: block; }
+		#lang-switcher { left: 10px; bottom: 18px; }
+		#theme-bar { right: 10px; bottom: 18px; }
+	}
 	/* ---- Theme support (Default = follow system, Dark, White) ---- */
 	html[data-theme="light"] body { background: linear-gradient(180deg, #f5f7fb 0%, #e7ecf5 100%); color: #1f2937; }
 	html[data-theme="light"] h1 { color: #111827; }
@@ -180,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply();
 		<div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="10000">
 			<div class="carousel-inner">
 			<div class="carousel-item active">
-				<img src="../pics/screenshot1_en.png" class="d-block" alt="Merge It screenshot" style="height: 600px; margin: auto;">
+				<img src="../pics/screenshot1_en.png" class="d-block" alt="Merge It screenshot">
 			</div>
 			</div>
 			<div class="carousel-indicators">

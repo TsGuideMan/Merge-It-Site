@@ -7,8 +7,9 @@
 <meta name="author" content="Man Singh Rana (TsGuideMan)">
 <title>Merge It - Privacy Policy</title>
 <style type="text/css">
+* { box-sizing: border-box; }
 body { background: linear-gradient(180deg, #0b1020 0%, #141d2b 100%); font-family: Helvetica, Arial, FreeSans, sans-serif; color: #edf2ff; margin: 0; padding-top: 56px; }
-#container { margin: 0 auto; width: 760px; overflow: auto; padding: 10px 0 40px 0; }
+#container { margin: 0 auto; width: min(760px, 92vw); overflow: auto; padding: 10px 0 40px 0; }
 h1 { font-size: 2.4em; color: #c0baaa; margin-bottom: 3px; margin-top: 10px; }
 h2 { padding: 12px; font-size: 1.3em; color: #7dd3fc; border: 2px solid rgba(125, 211, 252, 0.5); margin-top: 30px; margin-bottom: 15px; }
 p, li { color: #f8fafc; line-height: 1.5em; }
@@ -45,6 +46,22 @@ html[data-theme="light"] .menu { background: rgba(255, 255, 255, 0.95); border-b
 html[data-theme="light"] .menu a { color: #334155; }
 html[data-theme="light"] .menu a:hover { background: rgba(3, 105, 161, 0.1); color: #0369a1; }
 html[data-theme="light"] .menu a.active { background: #0369a1; color: #fff; }
+@media (max-width: 780px) {
+	#container { width: min(92vw, 760px); }
+	.menu ul { max-width: 92vw; padding: 0 6px; }
+	.menu a { font-size: 13px; padding: 7px 9px; }
+}
+@media (max-width: 520px) {
+	body { padding-top: 78px; }
+	#container { width: 92vw; }
+	h1 { font-size: 2em; }
+	h2 { font-size: 1.15em; }
+	.menu { padding: 10px 0 6px; }
+	.menu ul { gap: 6px; }
+	.menu a { width: auto; text-align: center; }
+	#lang-switcher { left: 10px; bottom: 18px; }
+	#theme-bar { right: 10px; bottom: 18px; }
+}
 </style>
 <script>
 window.mergeItTheme = (function() {
