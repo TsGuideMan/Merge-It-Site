@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://tsguideman.github.io/Merge-It-Site/</loc><changefreq>monthly</changefreq></url>
 <url><loc>https://tsguideman.github.io/Merge-It-Site/en/index.html</loc><changefreq>monthly</changefreq></url>
+<url><loc>https://tsguideman.github.io/Merge-It-Site/app/</loc><changefreq>monthly</changefreq></url>
 <url><loc>https://tsguideman.github.io/Merge-It-Site/en/privacy.html</loc><changefreq>yearly</changefreq></url>
 <url><loc>https://tsguideman.github.io/Merge-It-Site/en/contact.html</loc><changefreq>yearly</changefreq></url>
 <url><loc>https://tsguideman.github.io/Merge-It-Site/downloads/</loc><changefreq>weekly</changefreq></url>

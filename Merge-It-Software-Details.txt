@@ -2,14 +2,27 @@ Merge It - Software Details
 
 About
 -----
-Merge It is an offline desktop application designed to convert spreadsheet data into PowerPoint presentations. It allows users to select an Excel/CSV data file and a PPTX template, map sheet columns to placeholders such as {{Customer Name}}, and generate one PPTX per row or one combined presentation for all rows.
+Merge It converts spreadsheet data into PowerPoint presentations. The Windows desktop app and browser version let users select an Excel/CSV data file and a PPTX template, map sheet columns to placeholders such as {{Customer Name}}, and generate one PPTX per row or one combined presentation for all rows.
 
 The app is built for quick business reporting, document automation, and repetitive presentation generation without requiring an internet connection. The current project is a local Electron-based desktop app and is targeted at Windows users.
+
+Browser version
+---------------
+The website includes a client-side browser version at app/index.html. It processes selected spreadsheets and PowerPoint templates locally in the browser; it does not upload them. Spreadsheet and ZIP libraries are included locally so the application can work offline after its files have been downloaded. Per-row output is provided in one ZIP archive, or all selected rows can be merged into one presentation.
+
+To use the browser version, open app/index.html from a web server or the hosted website, select a spreadsheet and .pptx template, then create and download the output. The first row of the worksheet must contain unique column headers. Placeholders must match those headers exactly and stay in one PowerPoint text run.
+
+The downloadable standalone browser bundle is built with BUILD_WEB_APP.bat and saved as downloads/MergeIt-WebApp.zip. The merge-engine tests can be run with node --test tests/merge-engine.test.js from this folder.
+
+Advertising setup
+-----------------
+The hosted browser app, homepage, and downloads page have responsive Google AdSense placements. To enable them, enter the AdSense publisher ID and the four 10-digit ad-unit IDs in app/ads-config.js, then rebuild downloads/MergeIt-WebApp.zip with BUILD_WEB_APP.bat if you want to distribute the updated app. The publisher site must be approved and configured in AdSense. Ads are deliberately disabled for the standalone file:// bundle so local/offline file merging never requests third-party resources. Configure Google's required certified consent management platform for EEA, UK, and Swiss visitors before enabling ads for those regions. Without valid publisher and ad-unit IDs, no ad requests are made.
 
 Download
 --------
 Download options:
 - Download the packaged Windows installer from the project's GitHub Releases page when available.
+- Use the browser version from the hosted website without installing the desktop application.
 - Or run the app directly from source using the project folder and the following steps:
   1. Open the project folder.
   2. Run: npm install
@@ -89,7 +102,7 @@ E:\margeitpro update
 
 Repository details:
 - Name: Merge-It
-- Type: Electron desktop app for spreadsheet-to-PowerPoint reporting
+- Type: Browser and Electron apps for spreadsheet-to-PowerPoint reporting
 - Language: JavaScript / HTML / CSS
 - License: MIT
 

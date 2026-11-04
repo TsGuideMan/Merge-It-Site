@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Merge spreadsheet data into a PowerPoint template directly in your browser. Files stay on your device.">
+  <meta name="theme-color" content="#111a35">
+  <title>Merge It - Browser App</title>
+  <link rel="icon" type="image/png" href="../pics/marge-it-72.png">
+  <link rel="stylesheet" href="app.css">
+  <script defer src="vendor/xlsx.full.min.js"></script>
+  <script defer src="vendor/jszip.min.js"></script>
+  <script defer src="merge-engine.js"></script>
+  <script defer src="ads-config.js"></script>
+  <script defer src="ads.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../en/index.html">
+      <img src="../pics/marge-it-72.png" alt="">
+      <span>Merge It <small>Browser app</small></span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="../en/index.html">Home</a>
+      <a href="../downloads/">Windows download</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="intro">
+      <p class="eyebrow">Spreadsheet to PowerPoint</p>
+      <h1>Make every presentation a little less manual.</h1>
+      <p>Choose your spreadsheet and PowerPoint template. Merge It fills matching <code>{{placeholders}}</code> and downloads the finished presentation files.</p>
+      <p class="privacy"><span aria-hidden="true">●</span> Your files are processed in this browser and are not uploaded.</p>
+    </section>
+
+    <aside class="ad-container" data-adsense-slot="appTop" aria-label="Advertisement" hidden></aside>
+
+    <section class="workspace" aria-labelledby="workspace-title">
+      <div class="workspace-heading">
+        <div>
+          <p class="eyebrow">Local processing</p>
+          <h2 id="workspace-title">Create presentations</h2>
+        </div>
+        <span class="offline-tag">Works offline after page loads</span>
+      </div>
+
+      <div class="file-grid">
+        <label class="file-card" for="dataFile">
+          <span class="step">01 · SPREADSHEET</span>
+          <strong id="dataFileName">Choose Excel or CSV file</strong>
+          <span class="file-hint">.xlsx, .xls, .csv, .tsv, .ods</span>
+          <input id="dataFile" type="file" accept=".xlsx,.xls,.xlsm,.xlsb,.csv,.tsv,.ods">
+        </label>
+        <label class="file-card" for="pptxFile">
+          <span class="step">02 · POWERPOINT TEMPLATE</span>
+          <strong id="pptxFileName">Choose a .pptx template</strong>
+          <span class="file-hint">Use placeholders such as {{Customer Name}}</span>
+          <input id="pptxFile" type="file" accept=".pptx">
+        </label>
+      </div>
+
+      <div class="form-grid">
+        <label class="field">
+          <span>Worksheet</span>
+          <select id="sheetSelect" disabled><option>Choose a spreadsheet first</option></select>
+        </label>
+        <label class="field">
+          <span>Output name</span>
+          <input id="outName" type="text" value="Report" maxlength="80" autocomplete="off">
+        </label>
+        <label class="field">
+          <span>Start row <small>(first row is headers)</small></span>
+          <input id="startRow" type="number" value="2" min="2" step="1">
+        </label>
+        <label class="field">
+          <span>End row <small>(blank means last row)</small></span>
+          <input id="endRow" type="number" min="2" step="1" placeholder="Last row">
+        </label>
+      </div>
+
+      <div class="hint"><strong>Template tip</strong><span>Placeholder names must match spreadsheet headers exactly, and each placeholder must be kept in one PowerPoint text run.</span></div>
+
+      <fieldset class="mode-picker">
+        <legend>How should presentations be created?</legend>
+        <label><input type="radio" name="mode" value="perRow" checked><span><strong>One per row</strong><small>Download all presentations together in one ZIP file.</small></span></label>
+        <label><input type="radio" name="mode" value="single"><span><strong>One combined presentation</strong><small>Place every selected row into the same deck.</small></span></label>
+      </fieldset>
+
+      <div class="actions">
+        <button id="clearBtn" class="button button-secondary" type="button">Clear</button>
+        <button id="previewBtn" class="button button-secondary" type="button" disabled>Preview substitutions</button>
+        <button id="mergeBtn" class="button button-primary" type="button" disabled>Create files</button>
+      </div>
+
+      <div id="preview" class="preview" hidden aria-live="polite"></div>
+      <div class="status" role="status" aria-live="polite">
+        <div class="status-line"><strong id="statusTitle">Ready when you are</strong><span id="statusPercent">0%</span></div>
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+        <p id="statusMessage">Select a spreadsheet and a PowerPoint template to begin.</p>
+      </div>
+    </section>
+
+    <aside class="ad-container" data-adsense-slot="appBottom" aria-label="Advertisement" hidden></aside>
+
+    <footer>
+      <span>Merge It · Files stay on your device</span>
+      <a href="../downloads/">Need the Windows desktop app? Download it here.</a>
+    </footer>
+  </main>
+</body>
+</html>

@@ -27,6 +27,9 @@ code { background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(125, 211, 252, 
 .dl-btn { display: inline-block; background: linear-gradient(180deg, #4f8cff, #3867d6); color: #fff !important; font-weight: bold; padding: 14px 28px; border-radius: 10px; text-decoration: none; box-shadow: 0 8px 20px rgba(79, 140, 255, 0.3); font-size: 1.15em; }
 .dl-btn:hover { filter: brightness(1.06); }
 .dl-meta { font-size: 0.9em; color: #94a3b8; }
+.site-ad { min-height: 90px; max-width: 970px; margin: 16px auto; overflow: hidden; text-align: center; }
+.site-ad[hidden] { display: none; }
+.site-ad ins { min-height: 90px; }
 html[data-theme="light"] .dl-meta { color: #475569; }
 html[data-theme="light"] .dl-btn { color: #fff !important; }
 /* ---- Theme support (Default = follow system, Dark, White) ---- */
@@ -103,6 +106,8 @@ window.mergeItTheme = (function() {
 document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply(); });
 </script>
 <script src="../js/i18n.js"></script>
+<script defer src="../app/ads-config.js"></script>
+<script defer src="../app/ads.js"></script>
 </head>
 <body>
 <div id="lang-switcher"><select id="lang_select" aria-label="Change language"></select></div>
@@ -110,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply();
 <div id="container">
 <nav class="menu" id="Menu"><ul>
 <li><a href="../en/index.html" data-i18n="nav.home">Home</a></li>
+<li><a href="../app/">Web app</a></li>
 <li><a href="index.html" class="active" data-i18n="nav.download">Download</a></li>
 <li><a href="../blog/" data-i18n="nav.blog">Blog</a></li>
 <li><a href="../en/privacy.html" data-i18n="nav.privacy">Privacy</a></li>
@@ -118,6 +124,13 @@ document.addEventListener('DOMContentLoaded', function() { mergeItTheme.apply();
 <h1>Merge It Downloads</h1>
 <!-- Ad slot: paste your own AdSense ad code here -->
 <p>Merge It is an offline desktop application for Windows that converts spreadsheet data into PowerPoint presentations using Excel/CSV inputs and PPTX templates.</p>
+<p>Want to use it without installing the desktop app? <a class="dl-btn" href="../app/">Open the browser app</a></p>
+<aside class="site-ad" data-adsense-slot="siteDownload" aria-label="Advertisement" hidden></aside>
+
+<h2>Download the browser app</h2>
+<p>Download and extract the offline browser app bundle. It runs in a modern browser, processes your files on your device, and does not require an account or installation.</p>
+<p style="margin: 16px 0;"><a class="dl-btn" href="MergeIt-WebApp.zip" download>Download browser app (.zip)</a></p>
+<p class="dl-meta">Extract the ZIP file, then open <code>app/index.html</code>. Spreadsheet and PowerPoint files stay in your browser.</p>
 
 <h2>Download for Windows</h2>
 <p style="margin: 16px 0;">
@@ -152,6 +165,7 @@ Initial release of the local desktop app workflow.<br/>
 <ul>
 <li>Windows 10 or later (Windows desktop app)</li>
 <li>Runs locally as an offline Electron-based workflow - no internet connection required</li>
+<li>The browser app works on modern desktop browsers and processes selected files on your device.</li>
 </ul>
 
 <h2>Install from source</h2>
